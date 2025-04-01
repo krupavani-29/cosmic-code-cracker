@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Lock Breaker</title>
+    <style>
+        body { margin: 0; background: #0a0a23; color: white; font-family: Arial; text-align: center; }
+        #game-container { width: 600px; margin: 50px auto; padding: 20px; background: #1a1a3d; border-radius: 10px; }
+        input { padding: 10px; margin: 10px; width: 200px; }
+        button { padding: 10px 20px; background: #4a4e69; color: white; border: none; cursor: pointer; }
+        button:hover { background: #9a8c98; }
+        #result, #leaderboard { display: none; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen">
+            <h1>Brain Lock Breaker</h1>
+            <p>Solve 5 puzzles. Each answer unlocks the next!</p>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <button onclick="startGame()">Start</button>
+        </div>
+        <div id="quiz" style="display: none;">
+            <h2 id="question"></h2>
+            <p>Password: <span id="password-hint"></span></p>
+            <input type="text" id="answer" placeholder="Your answer">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="feedback"></p>
+        </div>
+        <div id="result">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button onclick="showLeaderboard()">Leaderboard</button>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+        <div id="leaderboard">
+            <h2>Top Minds</h2>
+            <ul id="leaderboard-list"></ul>
+            <button onclick="backToStart()">Back</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
